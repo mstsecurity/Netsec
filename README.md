@@ -1,5 +1,5 @@
-## 🕵️ Netsec
-Netsec, alan adları ve IP adresleri için hızlı WHOIS sorguları yapmaya yarayan, basit ve hafif bir komut satırı aracıdır.
+## 🕵️ İpdosec
+İpdosec, alan adları ve IP adresleri için hızlı WHOIS sorguları yapmaya yarayan, basit ve hafif bir komut satırı aracıdır.
 
 ## 🚀 Özellikler
 - **Hızlı ve Etkili**: Doğrudan WHOIS sunucularına bağlanarak anında sonuçlar verir.
@@ -13,33 +13,33 @@ Netsec, alan adları ve IP adresleri için hızlı WHOIS sorguları yapmaya yara
 ## ⚡ Kurulum
 - **1.Projeyi Klonlayın**
 ```bash
-git clone https://github.com/mstsecurity/Netsec
+git clone https://github.com/mstsecurity/ipdosec
 ```
 - **2. Dizin Değiştirin**
 ```bash
-cd Netsec
+cd ipdosec
 ```
 ---
 
 ## 💻 Kullanım
 Aracı terminalden çalıştırmak için python komutunu ve ardından dosya adını kullanın.
 ```bash-
-python Netsec <alan_adi_Veya_ip>
+python ipdosec <alan_adi_Veya_ip>
 ```
 - **örnek**
 Bir alan adı sorgulamak için
 ```bash
-python Netsec example.com
+python ipdosec example.com
 ```
 Bir ip adresi sorgulamak için
 ```bash
-python Netsec 8.8.8.8
+python ipdosec 8.8.8.8
 ```
 
 ---
 
 ## 💡 Sorunlar & Katkı
-Her türlü hata raporu, öneri veya katkı için GitHub'da [issue](https://github.com/mstsecurity/Netsec/issues) açmaktan çekinmeyin. Katkılarınızı bizim için çok değerli
+Her türlü hata raporu, öneri veya katkı için GitHub'da [issue](https://github.com/mstsecurity/ipdosec/issues) açmaktan çekinmeyin. Katkılarınızı bizim için çok değerli
 
 ---
 
