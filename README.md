@@ -1,5 +1,5 @@
 ## 🕵️ Netsec
-Whomst, alan adları ve IP adresleri için hızlı WHOIS sorguları yapmaya yarayan, basit ve hafif bir komut satırı aracıdır.
+Netsec, alan adları ve IP adresleri için hızlı WHOIS sorguları yapmaya yarayan, basit ve hafif bir komut satırı aracıdır.
 
 ## 🚀 Özellikler
 - **Hızlı ve Etkili**: Doğrudan WHOIS sunucularına bağlanarak anında sonuçlar verir.
@@ -39,7 +39,7 @@ python Netsec 8.8.8.8
 ---
 
 ## 💡 Sorunlar & Katkı
-Her türlü hata raporu, öneri veya katkı için GitHub'da [issue](https://github.com/mstsecurity/whomst/issues) açmaktan çekinmeyin. Katkılarınızı bizim için çok değerli
+Her türlü hata raporu, öneri veya katkı için GitHub'da [issue](https://github.com/mstsecurity/Netsec/issues) açmaktan çekinmeyin. Katkılarınızı bizim için çok değerli
 
 ---
 
