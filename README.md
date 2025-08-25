@@ -1,4 +1,4 @@
-## 🕵️ Whomst
+## 🕵️ Netsec
 Whomst, alan adları ve IP adresleri için hızlı WHOIS sorguları yapmaya yarayan, basit ve hafif bir komut satırı aracıdır.
 
 ## 🚀 Özellikler
@@ -13,27 +13,27 @@ Whomst, alan adları ve IP adresleri için hızlı WHOIS sorguları yapmaya yara
 ## ⚡ Kurulum
 - **1.Projeyi Klonlayın**
 ```bash
-git clone https://github.com/mstsecurity/whomst
+git clone https://github.com/mstsecurity/Netsec
 ```
 - **2. Dizin Değiştirin**
 ```bash
-cd whomst
+cd Netsec
 ```
 ---
 
 ## 💻 Kullanım
 Aracı terminalden çalıştırmak için python komutunu ve ardından dosya adını kullanın.
 ```bash-
-python whomst <alan_adi_Veya_ip>
+python Netsec <alan_adi_Veya_ip>
 ```
 - **örnek**
 Bir alan adı sorgulamak için
 ```bash
-python whomst example.com
+python Netsec example.com
 ```
 Bir ip adresi sorgulamak için
 ```bash
-python whomst 8.8.8.8
+python Netsec 8.8.8.8
 ```
 
 ---
