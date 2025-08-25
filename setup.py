@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='whomst',
+    name='whois-mst',
     version='0.1.0',
     description='alan adı ve ip adresi sorgulamak için yython ile yazılmış bir whois sorgulama aracı.',
     author='mstsecurity',
@@ -19,7 +19,7 @@ setup(
     python_requires='>=3.0',
     entry_points={
         'console_scripts': [
-            'whomst = whomst.whomst:main',
+            'whomst-mst = whomst.whomst:main',
         ],
     },
 )
