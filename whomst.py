@@ -21,6 +21,7 @@ WHOIS_SERVERS = {
     "cz": "whois.nic.cz",
     "pl": "whois.dns.pl",
     "ip": "whois.arin.net",
+    "pro": "whois.registry.pro"
 }
 
 logging.basicConfig(
@@ -33,18 +34,23 @@ logging.basicConfig(
 )
 
 def get_whois_server(domain_or_ip):
+    # IP adresi kontrolü
     if domain_or_ip.replace('.', '').isdigit():
         logging.info("sorgu bir ip adresi olduğu için varsayılan ip whois sunucusu seçildi.")
         return WHOIS_SERVERS.get("ip")
 
-    domain_parts = domain_or_ip.split('.')
-    if len(domain_parts) > 1:
-        two_part_tld = f"{domain_parts[-2]}.{domain_parts[-1]}"
-        if two_part_tld in WHOIS_SERVERS:
-            return WHOIS_SERVERS.get(two_part_tld)
-
-    single_part_tld = domain_parts[-1]
-    return WHOIS_SERVERS.get(single_part_tld)
+    try:
+        domain_parts = domain_or_ip.split('.')
+        if len(domain_parts) > 1:
+            two_part_tld = f"{domain_parts[-2]}.{domain_parts[-1]}"
+            if two_part_tld in WHOIS_SERVERS:
+                return WHOIS_SERVERS.get(two_part_tld)
+            
+            single_part_tld = domain_parts[-1]
+            return WHOIS_SERVERS.get(single_part_tld)
+        return None
+    except IndexError:
+        return None
 
 def whois_query(server, query_string):
     port = 43
@@ -64,7 +70,7 @@ def whois_query(server, query_string):
             logging.info(f"whois sunucusundan yanıt alındı.")
             return response.decode("utf-8", errors="ignore")
     except Exception as e:
-        logging.error(f"Sorgu sırasında hata oluştu: {e}")
+        logging.error(f"sorgu sırasında bir hata oluştu: {e}")
         return None
 
 def get_whois_info(domain_or_ip):
@@ -72,28 +78,26 @@ def get_whois_info(domain_or_ip):
     server = get_whois_server(query_target)
     
     if not server:
-        logging.error(f"'{query_target}' adlı alan adı için uygun whois sunucusu bulunamadı.")
-        return f"hata: desteklenmeyen alan adı veya is adresi."
+        logging.error(f"'{query_target}' için uygun whois sunucusu bulunamadı.")
+        return f"hata: desteklenmeyen alan adı veya ip adresi."
 
-    logging.info(f"'{query_target}' için WHOIS sorgusu '{server}' üzerinden başlatılıyor.")
+    logging.info(f"'{query_target}' whois sorgusu '{server}' üzerinden başlatılıyor.")
     
     response = whois_query(server, query_target)
 
     if not response:
-        return "Sorgu başarısız oldu veya sunucuya bağlanılamadı."
+        return "sorgu başarısız oldu veya sunucuya erişilemedi."
 
     lines = response.splitlines()
     for line in lines:
         if line.lower().startswith(("whois server:", "referralserver:")):
             new_server = line.split(":", 1)[1].strip()
             if new_server and new_server != server:
-                logging.info(f"Yönlendirme sunucusu bulundu: '{new_server}'. Yeni sorgu başlatılıyor.")
+                logging.info(f"yönlendirme sunucusu bulundu: '{new_server}'. yeni sorgu başlatılıyor.")
                 response = whois_query(new_server, query_target)
                 break
     
     return response
-
-# BURADAN İTİBAREN YENİ KOD BAŞLIYOR
 
 def main():
     if len(sys.argv) < 2:
@@ -106,4 +110,4 @@ def main():
     print(whois_result)
 
 if __name__ == "__main__":
-    main() 
+    main()
