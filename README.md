@@ -7,6 +7,9 @@ Whomst, alan adları ve IP adresleri için hızlı WHOIS sorguları yapmaya yara
 - **Yönlendirme Desteği**: Yönlendiren WHOIS sunucularını takip ederek en güncel bilgiyi sağlar.
 - **Loglama: Tüm sorgu** ve hata süreçlerini hem ekrana hem de whois_log.log dosyasına kaydeder.
 - **Bağımsız Çalışma**: Herhangi bir ekstra kütüphane gerektirmez, doğrudan Python ile çalışır.
+
+---
+
 ## ⚡ Kurulum
 - **1.Projeyi Klonlayın**
 ```bash
@@ -16,6 +19,8 @@ git clone https://github.com/mstsecurity/whomst
 ```bash
 cd whomst
 ```
+---
+
 ## 💻 Kullanım
 Aracı terminalden çalıştırmak için python komutunu ve ardından dosya adını kullanın.
 ```bash-
@@ -30,6 +35,9 @@ Bir ip adresi sorgulamak için
 ```bash
 python whomst 8.8.8.8
 ```
+
+---
+
 ## 💡 Sorunlar & Katkı
 Her türlü hata raporu, öneri veya katkı için GitHub'da [issue](https://github.com/mstsecurity/whomst/issues) açmaktan çekinmeyin. Katkılarınızı bizim için çok değerli
 
