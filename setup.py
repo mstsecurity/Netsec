@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name='whomst',
     version='0.1.0',
-    description='Alan adı ve IP adresi sorgulamak için Python ile yazılmış bir WHOIS aracı.',
+    description='alan adı ve ip adresi sorgulamak için yython ile yazılmış bir whois sorgulama aracı.',
     author='mstsecurity',
     author_email='mailspammer444@gmail.com',
     url='https://github.com/mstsecurity/whomst',
@@ -16,7 +16,7 @@ setup(
         'Topic :: Internet',
         'Topic :: System :: Networking'
     ],
-    python_requires='>=3.6',
+    python_requires='>=3.0',
     entry_points={
         'console_scripts': [
             'whomst = whomst.whomst:main',
