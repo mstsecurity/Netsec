@@ -36,4 +36,4 @@ Her türlü hata raporu, öneri veya katkı için GitHub'da [issue](https://gith
 ---
 
 ## 📜 Lisans
-Bu proje, MIT Lisansı ile yayınlanmıştır. Daha fazla bilgi için [LICENSE] dosyasına bakabilirsiniz.
+Bu proje, [MIT](https://opensource.org/licenses/MIT)Lisansı ile yayınlanmıştır. Daha fazla bilgi için [LICENSE](LISENCE) dosyasına bakabilirsiniz.
