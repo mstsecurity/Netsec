@@ -20,7 +20,7 @@ WHOIS_SERVERS = {
     "ca": "whois.cira.ca",
     "cz": "whois.nic.cz",
     "pl": "whois.dns.pl",
-    "ip": "whois.arin.net"
+    "ip": "whois.arin.net",
 }
 
 logging.basicConfig(
@@ -34,7 +34,7 @@ logging.basicConfig(
 
 def get_whois_server(domain_or_ip):
     if domain_or_ip.replace('.', '').isdigit():
-        logging.info("Sorgu bir IP adresi olduğu için varsayılan IP WHOIS sunucusu seçildi.")
+        logging.info("sorgu bir ip adresi olduğu için varsayılan ip whois sunucusu seçildi.")
         return WHOIS_SERVERS.get("ip")
 
     domain_parts = domain_or_ip.split('.')
@@ -61,7 +61,7 @@ def whois_query(server, query_string):
                     break
                 response += data
             
-            logging.info(f"WHOIS sunucusundan yanıt alındı.")
+            logging.info(f"whois sunucusundan yanıt alındı.")
             return response.decode("utf-8", errors="ignore")
     except Exception as e:
         logging.error(f"Sorgu sırasında hata oluştu: {e}")
@@ -72,8 +72,8 @@ def get_whois_info(domain_or_ip):
     server = get_whois_server(query_target)
     
     if not server:
-        logging.error(f"'{query_target}' adlı alan adı için uygun WHOIS sunucusu bulunamadı.")
-        return f"Hata: Desteklenmeyen alan adı veya IP adresi."
+        logging.error(f"'{query_target}' adlı alan adı için uygun whois sunucusu bulunamadı.")
+        return f"hata: desteklenmeyen alan adı veya is adresi."
 
     logging.info(f"'{query_target}' için WHOIS sorgusu '{server}' üzerinden başlatılıyor.")
     
@@ -93,12 +93,17 @@ def get_whois_info(domain_or_ip):
     
     return response
 
-if __name__ == "__main__":
+# BURADAN İTİBAREN YENİ KOD BAŞLIYOR
+
+def main():
     if len(sys.argv) < 2:
-        print("Kullanım: python whois.py <alan_adi_veya_ip>")
+        print("Kullanım: whomst <alan_adi_veya_ip>")
         sys.exit(1)
 
     domain_or_ip = sys.argv[1]
     whois_result = get_whois_info(domain_or_ip)
     print(f"\n--- {domain_or_ip} için WHOIS Bilgisi ---\n")
     print(whois_result)
+
+if __name__ == "__main__":
+    main() 
